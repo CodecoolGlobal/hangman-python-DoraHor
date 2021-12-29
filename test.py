@@ -1,4 +1,4 @@
-# from hangman import list_of_letters
+from hangman import list_of_letters
 
 
 # PART 1
@@ -105,8 +105,7 @@ def hangman_core(word_to_guess, already_tried_letters,lives,level_in):
         if lives == 0:
             print("MUCH TO LEARN YOU STILL HAVE, MY YOUNG PADAWAN!")
             merged_word_to_guess = [''.join(word_to_guess)]
-            print("THE WORD WAS: ") 
-            print(merged_word_to_guess)
+            print("THE WORD WAS: ", str(merged_word_to_guess))
         hangman(lives,level_in)
         if "_" not in word_completion:
             print(" Boom! Nailed it! Congrats! :) ")
@@ -242,11 +241,11 @@ ________ """)
 
 
 def main():
-    username = input("What is your username? ") 
+    username = input("What is your username? ")
+    print("Welcome ", username, " Let's play hangman!:) ")
     if username.lower() == str("quit"):
             print("Goodbye")
             sys.exit(0)  
-    print("Welcome ", username, "Let's play hangman!:) ")
     level_in = ask_level()
     lives = number_of_lives(level_in)
     print('Lives:', (lives))
